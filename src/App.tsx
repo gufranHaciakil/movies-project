@@ -43,7 +43,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/movies-project"
             element={
               <MovieCard moviesData={moviesData} setPageNum={setPageNum} />
             }
