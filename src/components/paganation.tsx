@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ReactPaginate from "react-paginate";
 
 const PaginationComp = ({ setPageNum }: { setPageNum: any }) => {
