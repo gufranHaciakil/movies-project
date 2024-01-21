@@ -6,16 +6,16 @@ import { useParams, Link } from "react-router-dom";
 const MovieDetalise = () => {
   const [movieDetalise, setMovieDetalise]: any = useState([]);
   const param = useParams();
-  const movieId = async () => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/${param.id}?api_key=3f3e5886f40d5703be130202e6219224&language=en-US`
-    );
-    setMovieDetalise(res.data);
-    console.log(movieDetalise);
-  };
+
   useEffect(() => {
+    const movieId = async () => {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/${param.id}?api_key=3f3e5886f40d5703be130202e6219224&language=en-US`
+      );
+      setMovieDetalise(res.data);
+    };
     movieId();
-  }, []);
+  }, [param.id]);
 
   return (
     <div className="flex flex-col items-center border-x-2 border-b-2 w-[90%] my-28 mx-auto ">
